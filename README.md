@@ -1,2 +1,2 @@
 # RabbitVersusPython
-Tutorials written in python to teach python
+Learn Python by making games.
