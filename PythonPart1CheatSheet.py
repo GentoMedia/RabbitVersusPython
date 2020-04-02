@@ -20,9 +20,8 @@
 
 # variables store values by name
 this_is_var = "This is a Variable"
-# variable name can be a combination of
-# letters, numbers, or _
-# uses snake_case and can't start with number
+# variable name can be a combination of letters, numbers, or _
+# uses snake_case and can't start with a number
 
 # integer
 int_var = 32
@@ -81,7 +80,7 @@ new_str = input("Type something here: ")
 # outputs string to console (drops outer quotations)
 print(new_str)
 
-# single ' or " can also be used for strings
+# ' or " can also be used for strings
 str_var = 'This is a string'
 print(new_str)
 
@@ -112,16 +111,16 @@ print(str_var)
 
 # returns True if both sides are equal
 1 == 1
-# != returns True is not equal
+# returns True is not equal
 1 != 1
 
-# > returns True if left side is greater
+# returns True if left side is greater
 2 > 1
-# >= returns True if left side is greater or equal
+# returns True if left side is greater or equal
 2 >= 1
-# < returns True if left side is lesser
+# returns True if left side is lesser
 1 < 2
-# <= returns True if left side is lesser or equal
+# returns True if left side is lesser or equal
 1 <= 2
 
 # True only if both sides True
@@ -148,6 +147,7 @@ elif 1 == 3:
 else:
 	print("This is from an else statement")
 # else will run if previous if / elif is False (must be at end of if / elif chain)
+
 
 #############################
 #   P E M D A S C N A O A   #
