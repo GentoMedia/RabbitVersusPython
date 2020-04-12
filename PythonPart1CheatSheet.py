@@ -1,10 +1,10 @@
-####################################
-####################################
-##                                ##
-##   Python Part 1 Cheat Sheet    ##
-##                                ##
-####################################
-####################################
+#############################
+#############################
+##                         ##
+##   Python Cheat Sheet    ##
+##                         ##
+#############################
+#############################
 
 
 ################
@@ -20,8 +20,9 @@
 
 # variables store values by name
 this_is_var = "This is a Variable"
-# variable name can be a combination of letters, numbers, or _
-# uses snake_case and can't start with a number
+# variable name can be a combination of
+# letters, numbers, or _
+# uses snake_case and can't start with number
 
 # integer
 int_var = 32
@@ -76,12 +77,12 @@ int_var += 1
 ############################
 
 # takes input from the user(as string)
-new_str = input("Type something here: ")
+input_str = input("Type something here: ")
 # outputs string to console (drops outer quotations)
-print(new_str)
+print(input_str)
 
-# ' or " can also be used for strings
-str_var = 'This is a string'
+# single ' or " can also be used for strings
+new_str = 'This is a string'
 print(new_str)
 
 # \n creates a new line for the text
@@ -111,16 +112,16 @@ print(str_var)
 
 # returns True if both sides are equal
 1 == 1
-# returns True is not equal
+# != returns True is not equal
 1 != 1
 
-# returns True if left side is greater
+# > returns True if left side is greater
 2 > 1
-# returns True if left side is greater or equal
+# >= returns True if left side is greater or equal
 2 >= 1
-# returns True if left side is lesser
+# < returns True if left side is lesser
 1 < 2
-# returns True if left side is lesser or equal
+# <= returns True if left side is lesser or equal
 1 <= 2
 
 # True only if both sides True
@@ -147,7 +148,6 @@ elif 1 == 3:
 else:
 	print("This is from an else statement")
 # else will run if previous if / elif is False (must be at end of if / elif chain)
-
 
 #############################
 #   P E M D A S C N A O A   #
@@ -186,3 +186,73 @@ while counter < 3:
 	print("In a loop")
 	counter += 1
 # this prints the string 3 times
+
+
+#################
+#   Functions   #
+#################
+
+# a function is a word followed by parenthasis
+# e.g. print()
+# functions are objects
+
+# define your own function before you run it
+# if the function takes arguments, they should be in the parentheses (optional)
+# arguments with an '=' sign are optional when function is called (optional)
+def function_name(arg1, arg2 = "!"):
+	""" Docstring to explain code
+		It's multiline """
+	sentence = arg1 + arg2
+	# returns a value from the function (optional)
+	return sentence
+
+# function needs to be called to run
+print(function_name("I want this printed"))
+
+
+###############
+#   Modules   #
+###############
+
+# modules are separate scripts that can be imported for use
+# can import modules from:
+# - standard library (comes with python install)
+# - installed modules (installed using pip from PyPi, or other)
+# - your own modules (modules in your project - directory path separated by '.'
+#    - e.g. 'script_folder.module'
+
+# imports the whole module
+# - need to call the module name when using objects
+import math
+
+# imports specific objects from a module (use commas to separate multiple objects)
+# - only need to call object when using
+from time import sleep, tzname
+
+# can give a different name to imported objects
+from datetime import date as year_month_day
+
+# calling the variables or functions from a module that's imported
+print(math.pi)
+for i in range(3):
+	sleep(1)
+	print(i)
+print(tzname)
+print(year_month_day.today())
+
+
+#################################
+#   Exceptions and Assertions   #
+#################################
+
+
+try:
+	print(1 / int(input("Divide 1 by: ")))
+except ZeroDivisionError:
+	print("Error")
+else:
+	print("Success")
+finally:
+	print("Finished")
+
+
