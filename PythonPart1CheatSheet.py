@@ -14,9 +14,9 @@
 # This is a comment - Not run in the program but good for notes
 
 
-######################
-#   Variable Types   #
-######################
+#############################
+#   Data Types & Variables  #
+#############################
 
 # variables store values by name
 this_is_var = "This is a Variable"
@@ -72,6 +72,39 @@ int_var += 1
 # can use -= *= /= %= //= **= for different operations
 
 
+#######################
+#   Data Structures   #
+#######################
+
+# strings are made with single or double quotes
+this_string = "This is a string"
+# mult-line strings can be made with triple quotes
+muli_line = '''This is 
+a string 
+on mulitple lines'''
+# strings are immutable - they cannot be changed (need to reassign the variable to change)
+
+# lists are made with brackets
+this_list = [1, 2, 3, 4]
+# calls in specific value in that index (starts at 0)
+int_var = this_list [0]
+# this_list index is 0-3
+# lists are mutable - they can be changed
+
+# tuples are made with parentheses
+this_tuple = (1, 2, 3, 4)
+# tuples similar to lists but immutable
+
+# strings, lists, and tuples are ordered - stay in their sequence and allow repeats
+
+# sets are made with curly brackets
+this_set = {1, 2, 3, 4}
+# sets are mutable
+#sets are unordered - no repeats or defined sequence
+
+# dictionaries
+
+
 ############################
 #   Playing with Strings   #
 ############################
@@ -81,29 +114,20 @@ input_str = input("Type something here: ")
 # outputs string to console (drops outer quotations)
 print(input_str)
 
-# single ' or " can also be used for strings
-new_str = 'This is a string'
-print(new_str)
-
 # \n creates a new line for the text
 str_var = "This \nis \na \nstring"
-print(str_var)
 
 # \ allows use of function characters within string
 str_var = 'This is Gento\'s text'
-print(str_var)
 
 # strings can be added to make one string
 str_var = "This " + "is a string"
-print(str_var)
 
 # numbers need to be converted to strings to add
 str_var = "This is the number " + str(12)
-print(str_var)
 
 # can multiple string by an integer to repeat
 str_var = "string" * 3
-print(str_var)
 
 
 ####################################
@@ -149,6 +173,7 @@ else:
 	print("This is from an else statement")
 # else will run if previous if / elif is False (must be at end of if / elif chain)
 
+
 #############################
 #   P E M D A S C N A O A   #
 #############################
@@ -166,17 +191,12 @@ else:
 # Assignment
 
 
-#######################
-#   Lists and Loops   #
-#######################
+#############
+#   Loops   #
+#############
 
-# lists are made with brackets
-this_list = [1, 2, 3, 4]
-# calls in specific value in that index (starts at 0)
-int_var = this_list [0]
-# this_list index is 0-3
-
-# for cycles through a list and preforms what"s inside
+# cycles through a data structure
+# preforms what's inside for each element
 for item in this_list:
 	print(item)
 
@@ -186,6 +206,41 @@ while counter < 3:
 	print("In a loop")
 	counter += 1
 # this prints the string 3 times
+
+
+#################################
+#   Exceptions and Assertions   #
+#################################
+
+# catch exceptions(errors) and determine what to do with them
+
+# runs what's inside and checks for exceptions
+try:
+	print(1 / int(input("Divide 1 by: ")))
+# if the specific exception occurs, runs what's inside (must follow try)
+except ZeroDivisionError:
+	print("You cannot divide by 0")
+	# can raise an error anytime (more info in paranthesis)
+	raise ValueError("There was an Error")
+# if any exception occurs, runs what's inside (must follow try)
+except:
+	print("Error")
+	# raises the exception that occured to cause the program to go to except again
+	raise
+# in no exception occurs, runs what's inside
+else:
+	print("Success")
+# runs at the end no matter if there is an exception or not (must follow try)
+finally:
+	print("Finished")
+
+# program will continue if exceptions are handled in the try-except block
+# if another exception is raised that's not handled by except, program stops with an error
+
+# checks if what comes after is true
+# if false raises AssertionError exception
+# more info after comma
+assert 1==1, "One does not egual one"
 
 
 #################
@@ -209,6 +264,67 @@ def function_name(arg1, arg2 = "!"):
 # function needs to be called to run
 print(function_name("I want this printed"))
 
+# example used in Built-in Functions section
+def this_function(something):
+	if something == 1:
+		return True
+	else:
+		return False
+
+
+##########################
+#   Built-in Functions   #
+##########################
+
+# returns absolute value of integer or float
+abs(-1)
+
+# returns a data structure with values that failed a True/False function filtered out
+# arg1 is a function and arg2 is a data structure filter
+filter(this_function, this_list)
+
+# returns a float from a number or string of a number
+float(int_var)
+
+# returns user input as a string (prompt for the user as argument)
+input("Type something: ")
+
+# returns an integer from a number or string of a number
+# drops the decimal (rounds down)
+int(float_var)
+
+# return the length or a data structure as an integer
+len(this_list)
+
+# return a list of the elements of a data structure
+list("This is a list of letters and spaces")
+
+# returns a data structure with a function applied to each element
+map(this_function, this_list)
+
+# output argument to terminal as string
+print(this_string)
+
+# return a rounded integer or float
+# arg 1 is the number to be rounded and arg2 is the decimal places to round to
+# exclude arg2 to return an integer
+round(float_var, 1)
+
+# returns a set of the elements of a data structure
+set(this_list)
+
+# returns a string
+str(int_var)
+
+# returns the sum of elements of a data structure
+sum(this_list)
+
+# returns a tuple from a given data structure
+tuple(this_list)
+
+# A more complete list of the build-in functions:
+# - https://docs.python.org/3/library/functions.html
+
 
 ###############
 #   Modules   #
@@ -218,7 +334,7 @@ print(function_name("I want this printed"))
 # can import modules from:
 # - standard library (comes with python install)
 # - installed modules (installed using pip from PyPi, or other)
-# - your own modules (modules in your project - directory path separated by '.'
+# - your own modules (modules in your project - directory path separated by dot
 #    - e.g. 'script_folder.module'
 
 # imports the whole module
@@ -239,20 +355,3 @@ for i in range(3):
 	print(i)
 print(tzname)
 print(year_month_day.today())
-
-
-#################################
-#   Exceptions and Assertions   #
-#################################
-
-
-try:
-	print(1 / int(input("Divide 1 by: ")))
-except ZeroDivisionError:
-	print("Error")
-else:
-	print("Success")
-finally:
-	print("Finished")
-
-
